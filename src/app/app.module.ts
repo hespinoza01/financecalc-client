@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRouterModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
+import { InputfieldComponent } from './components/inputfield/inputfield.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    InputfieldComponent
   ],
   imports: [
     BrowserModule,

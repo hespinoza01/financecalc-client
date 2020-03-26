@@ -1,15 +1,17 @@
 <h2>Acceso</h2>
 
 <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
-  <fieldset>
-    <label>Nombre de usuario</label>
-    <input type="text" name="username" #username="ngModel" [(ngModel)]="usuario.username">
-  </fieldset>
+  <app-inputfield
+    label="Nombre de usuario"
+    type="text"
+    name="username"
+    [(ngModel)]="usuario.username"></app-inputfield>
 
-  <fieldset>
-    <label>Contraseña</label>
-    <input type="password" name="password" #password="ngModel" [(ngModel)]="usuario.password">
-  </fieldset>
+  <app-inputfield
+    label="Contraseña"
+    type="password"
+    name="password"
+    [(ngModel)]="usuario.password"></app-inputfield>
 
   <button [disabled]="!formLogin.form.valid">{{ title }}</button>
 </form>
