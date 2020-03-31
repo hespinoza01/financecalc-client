@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ValueAccessorBase } from './ValueAccessorBase';
+import { Component, Input, ViewChild, Optional, Inject } from '@angular/core';
+import { NgModel, NG_VALUE_ACCESSOR, NG_VALIDATORS, NG_ASYNC_VALIDATORS, } from '@angular/forms';
+import { ValueAccessorBase } from './value-accessor';
+import { ID } from '../../utils/id';
 
 @Component({
   selector: 'app-inputfield',
@@ -8,7 +9,11 @@ import { ValueAccessorBase } from './ValueAccessorBase';
   styleUrls: ['./inputfield.component.css'],
 
   providers: [
-    {provide: NG_VALUE_ACCESSOR, useExisting: InputfieldComponent, multi: true}
+    {
+      provide: NG_VALUE_ACCESSOR, 
+      useExisting: InputfieldComponent, 
+      multi: true
+    }
   ]
 })
 export class InputfieldComponent extends ValueAccessorBase<string> {
@@ -17,5 +22,5 @@ export class InputfieldComponent extends ValueAccessorBase<string> {
   @Input() label: string;
   @Input() name: string;
   @Input() placeholder: string = " ";
-
+  id = ID();
 }
