@@ -1,17 +1,23 @@
-<h2>Acceso</h2>
+<section>
+	<h1>Financecalc</h1>
 
-<form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
-  <app-inputfield
-    label="Nombre de usuario"
-    type="text"
-    name="username"
-    [(ngModel)]="usuario.username"></app-inputfield>
+	<article class="form-wrapper">
+		<h3>Inicio de sessión</h3>
 
-  <app-inputfield
-    label="Contraseña"
-    type="password"
-    name="password"
-    [(ngModel)]="usuario.password"></app-inputfield>
+		<form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+		  <app-inputfield
+		    label="Nombre de usuario"
+		    type="text"
+		    name="username"
+		    [(ngModel)]="usuario.username"></app-inputfield>
 
-  <button [disabled]="!formLogin.form.valid">{{ title }}</button>
-</form>
+		  <app-inputfield
+		    label="Contraseña"
+		    type="password"
+		    name="password"
+		    [(ngModel)]="usuario.password"></app-inputfield>
+
+		  <button class="btn btn-primary" [disabled]="!formLogin.form.valid">{{ title }}</button>
+		</form>
+	</article>
+</section>

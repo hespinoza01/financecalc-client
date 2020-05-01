@@ -14,7 +14,7 @@ export class LoginComponent {
   public usuario: Usuario;
 
   constructor() {
-    this.title = 'Iniciar Sessión';
+    this.title = 'Iniciar Sesión';
     this.usuario = new Usuario('', '', '', '', '', 0);
   }
 
